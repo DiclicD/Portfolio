@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Développeur C#</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #8A2BE2;
+            --secondary-color: #4B0082;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        section {
+            padding: 4rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1, h2 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        #home {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+        }
+
+        #about, #projects, #skills, #contact {
+            background-color: white;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .project-card {
+            background-color: var(--background-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card .content {
+            padding: 1rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .skill-item {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        input, textarea {
+            padding: 0.5rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#projects">Projets</a>
+            <a href="#skills">Compétences</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="animate__animated animate__fadeIn">
+        <h1>John Doe</h1>
+        <p>Développeur C# passionné</p>
+    </section>
+
+    <section id="about" class="animate__animated animate__fadeIn">
+        <h2>À propos de moi</h2>
+        <p>Je suis un développeur C# expérimenté avec une passion pour la création d'applications robustes et évolutives. Avec plus de 5 ans d'expérience dans le développement .NET, j'ai travaillé sur une variété de projets allant des applications de bureau aux services web.</p>
+    </section>
+
+    <section id="projects" class="animate__animated animate__fadeIn">
+        <h2>Mes Projets</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="/api/placeholder/400/300" alt="Projet 1">
+                <div class="content">
+                    <h3>Projet 1</h3>
+                    <p>Description du projet 1</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="/api/placeholder/400/300" alt="Projet 2">
+                <div class="content">
+                    <h3>Projet 2</h3>
+                    <p>Description du projet 2</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="/api/placeholder/400/300" alt="Projet 3">
+                <div class="content">
+                    <h3>Projet 3</h3>
+                    <p>Description du projet 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="animate__animated animate__fadeIn">
+        <h2>Mes Compétences</h2>
+        <div class="skills-list">
+            <span class="skill-item">C#</span>
+            <span class="skill-item">.NET Core</span>
+            <span class="skill-item">ASP.NET</span>
+            <span class="skill-item">Entity Framework</span>
+            <span class="skill-item">SQL Server</span>
+            <span class="skill-item">Azure</span>
+            <span class="skill-item">Git</span>
+            <span class="skill-item">Agile/Scrum</span>
+        </div>
+    </section>
+
+    <section id="contact" class="animate__animated animate__fadeIn">
+        <h2>Contactez-moi</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+            <textarea name="message" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('section').forEach((section, i) => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Je vous répondrai dès que possible.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
